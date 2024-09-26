@@ -6,6 +6,7 @@ services:
          - cvgenerator
       ports:
          - 80:80
+         - 81:81
       restart: unless-stopped
 networks:
    mastermind:

@@ -1,0 +1,8 @@
+services:
+   reverse-proxy:
+      image: ghcr.io/ola-awaly/mastermind/reverse-proxy:latest
+      networks:
+         - mastermind
+      ports:
+         - 80:80
+      restart: unless-stopped

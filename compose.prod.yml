@@ -3,9 +3,12 @@ services:
       image: ghcr.io/ola-awaly/mastermind/reverse-proxy:latest
       networks:
          - mastermind
+         - cvgenerator
       ports:
          - 80:80
       restart: unless-stopped
 networks:
    mastermind:
+      driver: bridge
+   cvgenerator:
       driver: bridge

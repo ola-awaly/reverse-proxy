@@ -12,11 +12,7 @@ jobs:
       runs-on: ubuntu-latest
       permissions:
          packages: write
-      strategy:
-         matrix:
-            include:
-               - path: 'reverse-proxy'
-                 full-image-name: ghcr.io/${{ github.repository }}/reverse-proxy
+
       steps:
          - name: checkout code
            uses: actions/checkout@v4
@@ -35,15 +31,15 @@ jobs:
            id: metadata
            uses: docker/metadata-action@v5
            with:
-              images: ${{ matrix.full-image-name }}
+              images: ghcr.io/${{ github.repository }}/reverse-proxy
 
          - name: build et push
            uses: docker/build-push-action@v5
            with:
               push: true
-              tags: ${{ matrix.full-image-name }}:latest
-              context: ./${{matrix.path}}
-              file: ./${{matrix.path}}/Dockerfile.prod
+              tags: ghcr.io/${{ github.repository }}/reverse-proxy:latest
+              context: ./
+              file: Dockerfile.prod
               cache-from: type=gha
               cache-to: type=gha,mode=max
    deploy:

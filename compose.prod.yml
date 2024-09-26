@@ -6,3 +6,6 @@ services:
       ports:
          - 80:80
       restart: unless-stopped
+networks:
+   mastermind:
+      driver: bridge

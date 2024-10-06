@@ -40,8 +40,7 @@ jobs:
               tags: ghcr.io/${{ github.repository }}/reverse-proxy:latest
               context: ./
               file: Dockerfile.prod
-              cache-from: type=gha
-              cache-to: type=gha,mode=max
+
               no-cache: true
    deploy:
       needs: build

@@ -42,6 +42,7 @@ jobs:
               file: Dockerfile.prod
               cache-from: type=gha
               cache-to: type=gha,mode=max
+              no-cache: true
    deploy:
       needs: build
       runs-on: ubuntu-latest

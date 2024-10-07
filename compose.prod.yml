@@ -1,6 +1,6 @@
 services:
    reverse-proxy:
-      image: ghcr.io/ola-awaly/reverse-proxy/reverse-proxy:latest
+      image: ghcr.io/ola-awaly/reverse-proxy/reverse-proxy
 
       networks:
          - mastermind

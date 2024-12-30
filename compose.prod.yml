@@ -5,6 +5,7 @@ services:
       networks:
          - mastermind
          - cvgenerator
+         - portfolio
       ports:
          - 80:80
          - 81:81
@@ -14,4 +15,6 @@ networks:
    mastermind:
       driver: bridge
    cvgenerator:
+      driver: bridge
+   portfolio:
       driver: bridge

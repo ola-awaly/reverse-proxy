@@ -10,6 +10,7 @@ services:
       ports:
          - 80:80
          - 81:81
+         - 82:82
          - 3000:3000
       restart: unless-stopped
 networks:

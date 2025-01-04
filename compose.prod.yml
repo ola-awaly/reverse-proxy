@@ -9,10 +9,13 @@ services:
          - monportfolio
       ports:
          - 80:80
-         - 81:81
-         - 82:82
-         - 3000:3000
+
+         - 443:443
+      volumes:
+         - /etc/letsencrypt:/etc/letsencrypt # Pour stocker les certificats SSL
+
       restart: unless-stopped
+
 networks:
    mastermind:
       driver: bridge
